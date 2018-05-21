@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Barcode</title>
+</head>
+<body>
+<div style="text-align:center">
+
+    <form method="post" action="/barcode" th:object="${barcodeObject}">
+        Name of product: <input type="text" th:field="*{productName}"><br/>
+        <span th:if="${#fields.hasErrors('productName')}" th:errors="*{productName}"></span>
+
+        Name of company: <input type="text" th:field="*{productCompany}"><br/>
+        <span th:if="${#fields.hasErrors('productCompany')}" th:errors="*{productCompany}"></span>
+
+        Barcode: <input type="text" th:field="*{barcode}"></br>
+        <span th:if="${#fields.hasErrors('barcode')}" th:errors="*{barcode}"></span>
+
+        Weight: <input type="number" th:field="*{weight}"></br>
+        <span th:if="${#fields.hasErrors('weight')}" th:errors="*{weight}"></span>
+
+        <input type="submit" value="wyslij">
+    </form>
+
+</div>
+
+</body>
+</html>

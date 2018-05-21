@@ -3,18 +3,20 @@ package pl.lukaszprasek.databaseFirstApp.models;
 import javax.persistence.*;
 
 @Entity
-@Table(name="barcode")//to jest nasza tabela, ktora bedzie reprezentowana za pomoca tego obiektu, encji
+@Table(name = "barcode")//to jest nasza tabela, ktora bedzie reprezentowana za pomoca tego obiektu, encji
 public class BarcodeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)//samo sie uzupełnia
     private int id;
-    @Column(name="product_name")
+    @Column(name = "product_name")
     private String productName;
-    @Column(name="company_name")
-    private String productCompany;
-    private String barcode;
-    private int weight;
 
+    @Column(name = "company_name")
+    private String productCompany;
+    @Column(name = "barcode")
+    private String barcode;
+    @Column(name = "weight")
+    private int weight;
 
     public String getBarcode() {
         return barcode;
@@ -23,8 +25,6 @@ public class BarcodeEntity {
     public void setBarcode(String barcode) {
         this.barcode = barcode;
     }
-
-
 
     public int getId() {
         return id;
